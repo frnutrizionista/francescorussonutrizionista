@@ -5,6 +5,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+	<script src="https://kwes.io/js/kwes.js"></script>
 	<head>
 		<title>CMD Raccolta Dati</title>
 		<meta charset="utf-8" />
@@ -21,27 +22,17 @@
 
 		<!-- Signup Form -->
 		<form>
-			<div class="fields">
-				<div class="field half">
-					<input type="text" name="Cognome" id="Cognome" placeholder="Cognome" />
-				<br>
-				<div class="field half">
-					<input type="text" name="name" id="name" placeholder="Nome" />
-				</div>
-				<br>
-				<div class="field half">
-					<input type="text" name="peso" id="peso" placeholder="Peso" />
-				</div>
-				<br>
-				<div class="field half">
-					<input type="text" name="circonferenza" id="circonferenza" placeholder="Circonferenza Addominale" />
-				</div>
-			</div>
-			<br>
-			<br>
-			<ul class="actions">
-			<li><input type="submit" value="Invia i dati" class="button primary" /></li>
-			</ul>
+			<div class="kwes-form">
+				<form method="POST" action="https://kwes.io/api/foreign/forms/youruniqueid">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" rules="required">
+    <label for="email">E-mail</label>
+    <input type="email" name="email" id="email" rules="required|email|max:255">
+    <label for="message">Message</label>
+    <textarea name="message" id="message" rules="required"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</div>
 		</form>
 
 		<!-- Footer -->
