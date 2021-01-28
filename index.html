@@ -5,6 +5,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+	<script src="https://kwes.io/v2/kwes-script.js" defer></script>
 	<head>
 		<title>CMD Raccolta Dati</title>
 		<meta charset="utf-8" />
@@ -20,34 +21,32 @@
 			</header>
 
 		<!-- Signup Form -->
-		<form>
-			<div class="fields">
-				<div class="field half">
-					<input type="text" name="Cognome" id="Cognome" placeholder="Cognome" />
-				<br>
-				<div class="field half">
-					<input type="text" name="name" id="name" placeholder="Nome" />
-				</div>
-				<br>
-				<div class="field half">
-					<input type="text" name="peso" id="peso" placeholder="Peso" />
-				</div>
-				<br>
-				<div class="field half">
-					<input type="text" name="circonferenza" id="circonferenza" placeholder="Circonferenza Addominale" />
-				</div>
-			</div>
-			<br>
-			<br>
-			<ul class="actions">
-			<li><input type="submit" value="Invia i dati" class="button primary" /></li>
-			</ul>
+		<div>
+ <form class = "kwes-form" action = "https://kwes.io/api/foreign/forms/d29csRp4p8tPKercdJa5">
+ <form method="POST" action="https://kwes.io/api/foreign/forms/youruniqueid">
+     <label for = "name"> Il tuo nome </label>
+      <input type = "text" name = "name">
+    <label for = "surname"> Il tuo cognome </label>
+      <input type = "text" name = "surname">
+    
+       <label for = "numerotelefono"> Il tuo numero di telefono </label>
+      <input type = "text" name = "numerotelefono">
+	 
+	   <label for = "peso"> Il tuo peso </label>
+      <input type = "text" name = "peso">
+	 
+	  <label for = "circonferenza"> La tua circonferenza addominale </label>
+      <input type = "text" name = "circonferenza">
+	 
+    <button type="submit">Invia</button>
+	 </form>
+</div>
 		</form>
 
 		<!-- Footer -->
 			<footer id="footer">
 				<ul class="icons">
-					<li><a href="#" class="icon brands fa-facebook"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-facebook"><span class="label">Facebook</span></a></li>
 					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 					<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
 				</ul>
