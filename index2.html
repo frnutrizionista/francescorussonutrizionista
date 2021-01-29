@@ -1,60 +1,60 @@
-<!DOCTYPE HTML>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="UTF-8">
-<title> CMD MOSCATI Raccolta Dati Paziente</title>
-fetch("https://api.apispreadsheets.com/data/7410/").then(res=>{
-	if (res.status === 200){
-		// SUCCESS
-		res.json().then(data=>{
-			const yourData = data
-		}).catch(err => console.log(err))
-	}
-	else{
-		// ERROR
-	}
-})
+<title>Save Web Form Data to Spreadsheets - Contact Form</title>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script>
+function SubForm (){
+    $.ajax({
+        url:'https://api.apispreadsheets.com/data/7412/',
+        headers: {"accessKey": "YOUR_ACCESS_KEY", "secretKey": "YOUR_ACCESS_KEY"}
+        type:'post',
+        data:$("#myForm").serializeArray(),
+        success: function(){
+          alert("Form Data Submitted :)")
+        },
+        error: function(){
+          alert("There was an error :(")
+        }
+    });
+}
+</script>
 </head>
 <body>
-<label>Codice Fiscale</label>
-<br/>
-<input name="codice_fiscale"/>
-<br/>
-
+  <form id="myForm">
+    <label>codice_fiscale</label>
+    <br/>
+    <input name="codice_fiscale" />
+    <br/>
+    <label>Nome</label>
+    <br/>
+    <input name="nome" />
+    <br/>
 <label>Cognome</label>
-<br/>
-<input name="cognome"/>
-<br/>
-
-<label>Nome</label>
-<br/>
-<input name="nome"/>
-<br/>
-
+    <br/>
+    <input name="cognome" />
+    <br/>
 <label>E-mail</label>
-<br/>
-<input name="email"/>
-<br/>
-
-<label>Numero di telefono</label>
-<br/>
-<input name="telefono"/>
-<br/>
-
-<label>Il tuo peso</label>
-<br/>
-<input name="peso"/>
-<br/>
-<label>Messaggio</label>
-<br/>
-<textarea name="messaggio">
-</textarea>
-<br/>
-<br/>
-
-</form>
-<button onclick="SubForm()">Submit</button>
+    <br/>
+    <input name="email" />
+    <br/>
+<label>Cellulare</label>
+    <br/>
+    <input name="telefono" />
+    <br/>
+<label>Peso</label>
+    <br/>
+    <input name="peso" />
+    <br/>
+<label>Circonferenza</label>
+    <br/>
+    <input name="circonferenza" />
+    <br/>
+    
+  </form>
+  <button onclick="SubForm()">Submit</button>
 </body>
 </html>
-
-	
