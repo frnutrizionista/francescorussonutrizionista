@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> CMD MOSCATI Raccolta Dati Paziente</title>
+<script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+function SubForm (){
+$.ajax({
+url: 'https://api.apispreadsheets.com/data/7410/',
+type:'post',
+data:$("#myForm").serializeArray()
+success: function(){
+allert("Form Data Submitted :)")
+},
+error, function(){
+allert("There was an error:(")
+}
+});
+}
+</script>
+
+</head>
+<body>
+<label>Codice Fiscale</label>
+<br/>
+<input name="codice_fiscale"/>
+<br/>
+
+<label>Cognome</label>
+<br/>
+<input name="cognome"/>
+<br/>
+
+<label>Nome</label>
+<br/>
+<input name="nome"/>
+<br/>
+
+<label>E-mail</label>
+<br/>
+<input name="email"/>
+<br/>
+
+<label>Numero di telefono</label>
+<br/>
+<input name="telefono"/>
+<br/>
+
+<label>Il tuo peso</label>
+<br/>
+<input name="peso"/>
+<br/>
+<label>Messaggio</label>
+<br/>
+<textarea name="messaggio">
+</textarea>
+<br/>
+<br/>
+
+</form>
+<button onclick="SubForm()">Submit</button>
+</body>
+</html>
+
+	
